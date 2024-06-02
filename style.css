@@ -1,0 +1,16 @@
+/* Minimalist CSS Boilerplate */
+
+/* Reset some default browser styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set a base font size and family */
+html {
+  font-size: 62.5%; /* 1 rem = 10px */
+  font-family: Arial, sans-serif;
+}
