@@ -28,18 +28,35 @@ body {
 
 .display {
   display: flex;
-  justify-content: left;
+  justify-content: right;
   align-items: center;
-  padding-left: 2rem;
+  padding-right: 3rem;
   font-size: 5rem;
   width: 100%;
   max-width: 45rem;
   height: 100%;
   max-height: 10rem;
-  border: 2px solid rgb(102, 101, 101);
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
+  border: .5px solid #cf8f0e;
+  color: white;
+  background-color: #0a0a0a
 }
+#running-display {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding-right: 3rem;
+    font-size: 1.5rem;
+    width: 100%;
+    max-width: 45rem;
+    height: 100%;
+    max-height: 3rem;
+    color: white;
+    background-color: #0a0a0a;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+
 
 .button-container {
   display: flex;
@@ -49,9 +66,10 @@ body {
   max-width: 45rem;
   height: 100%;
   max-height: 45rem;
-  background-color: #e8e6e6;
-  border: 2px solid rgb(102, 101, 101);
+  background-color: #0a0a0a;
+  border: 2px solid rgb(0, 0, 0);
   padding: .25rem
+
 }
 
 .button-container button {
@@ -59,8 +77,8 @@ body {
   margin: 0.5rem;
   padding: 1rem;
   font-size: 2rem;
-  background-color: #b5d5f7;
-  color: #333;
+  /* background-color: #2011e9; */
+  color: #ffffff;
   border: none;
   border-radius: 0.5rem;
   cursor: pointer;
@@ -73,5 +91,18 @@ body {
 }
 
 .button-container button:hover {
-  background-color: #95c3f7;
+  background-color: #d4d4d4;
+}
+
+.number-button{
+    background-color: #333;
+}
+.operator-button{
+    background-color: #cf8f0e;
+}
+#button-equals{
+    background-color: #cf8f0e;
+}
+#button-clear, #button-empty{
+   background-color: #d4d4d4;
 }

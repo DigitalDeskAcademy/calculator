@@ -9,31 +9,39 @@
   </head>
   <body>
     <div class="container">
-      <div class="display">125651651.00</div>
+      <div class="running-display" id="running-display"></div>
+      <div class="display">0</div>
       <div class="button-container">
-        <button class="calc-button" id="+">+</button>
-        <button class="calc-button" id="-">-</button
-        ><button class="calc-button" id="*">*</button>
-        <button class="calc-button" id="/">/</button
-        ><button class="calc-button" id="1">1</button>
-        <button class="calc-button" id="2">2</button
-        ><button class="calc-button" id="3">3</button>
-        <button class="calc-button" id="clear">©️</button
-        ><button class="calc-button" id="4">4</button>
-        <button class="calc-button" id="5">5</button
-        ><button class="calc-button" id="6">6</button>
-        <button class="calc-button"></button
-        ><button class="calc-button" id="7">7</button>
-        <button class="calc-button" id="8">8</button
-        ><button class="calc-button" id="9">9</button>
-        <button class="calc-button"></button
-        ><button class="calc-button" id="0">0</button>
-        <button class="calc-button"></button
-        ><button class="calc-button" id=".">.</button>
-        <button class="calc-button" id="=">=</button>
-      </div>
-    </div>
-
+    <!-- Row 1: Operators -->
+    <button class="calc-button utility-button" id="button-clear">C</button>
+    <button class="calc-button" id="button-empty"></button>
+    <button class="calc-button" id="button-empty"></button>
+    <button class="calc-button operator-button" id="button-divide">/</button>
+    
+    <!-- Row 2: Numbers 7, 8, 9 and Clear Button -->
+    <button class="calc-button number-button" id="button-7">7</button>
+    <button class="calc-button number-button" id="button-8">8</button>
+    <button class="calc-button number-button" id="button-9">9</button>
+    <button class="calc-button operator-button" id="button-multiply">*</button>
+    
+    <!-- Row 3: Numbers 4, 5, 6 -->
+    <button class="calc-button number-button" id="button-4">4</button>
+    <button class="calc-button number-button" id="button-5">5</button>
+    <button class="calc-button number-button" id="button-6">6</button>
+    <button class="calc-button operator-button" id="button-subtract">-</button>
+    
+    <!-- Row 4: Numbers 1, 2, 3 and Add Button -->
+    <button class="calc-button number-button" id="button-1">1</button>
+    <button class="calc-button number-button" id="button-2">2</button>
+    <button class="calc-button number-button" id="button-3">3</button>
+    <button class="calc-button operator-button" id="button-add">+</button>
+    
+    <!-- Row 5: Number 0 and Decimal Point -->
+    <button class="calc-button number-button" id="button-0">0</button>
+    <button class="calc-button number-button" id="button-decimal">.</button>
+    <button class="calc-button utility-button" id="button-equals">=</button>
+  </div>
+</div>
     <script src="script.js"></script>
   </body>
 </html>
