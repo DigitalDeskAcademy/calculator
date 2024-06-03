@@ -16,6 +16,7 @@ let runningDisplay = document.querySelector("#running-display");
 const numberButtons = document.querySelectorAll(".number-button");
 const operatorButtons = document.querySelectorAll(".operator-button");
 const utilityButtons = document.querySelectorAll(".utility-button");
+const backspaceButton = document.querySelector("#button-backspace");
 
 // Button Event Listeners
 
@@ -30,7 +31,6 @@ numberButtons.forEach((button) => {
       display.textContent += buttonValue;
     }
     runningDisplay.textContent += buttonValue; // Append to running display
-    console.log("Number clicked:", buttonValue);
   });
 });
 
@@ -38,14 +38,11 @@ numberButtons.forEach((button) => {
 operatorButtons.forEach((button) => {
   button.addEventListener("click", function (e) {
     operator = e.target.textContent;
-
-    if (operator) {
-      int1 += parseFloat(display.textContent);
-      display.textContent = "";
-      runningDisplay.textContent += `${display.textContent} ${operator} `;
-    } else {
+    if (!newInput) {
       int1 = parseFloat(display.textContent);
+      runningDisplay.textContent += `${operator}`;
       display.textContent = "";
+      newInput = "true";
     }
   });
 });
@@ -57,10 +54,10 @@ utilityButtons.forEach((button) => {
 
     // Clear Button
     if (buttonValue === "C") {
-      clearCalculator();
+      clearDisplay();
     }
 
-    // Equals
+    // Equals button
     if (buttonValue === "=") {
       if (!operator) {
         console.log("Invalid or missing operator!");
@@ -72,6 +69,15 @@ utilityButtons.forEach((button) => {
       }
     }
   });
+});
+
+backspaceButton.addEventListener("click", function () {
+  if (display.textContent.length > 1) {
+    display.textContent = display.textContent.slice(0, -1);
+  } else {
+    display.textContent = "0";
+  }
+  runningDisplay.textContent = runningDisplay.textContent.slice(0, -1);
 });
 
 // Create the main function for calculator
@@ -111,12 +117,10 @@ const clearValues = function () {
   int1 = 0;
   int2 = 0;
   operator = "";
+  newInput = false;
 };
-const clearCalculator = function () {
+const clearDisplay = function () {
   display.textContent = "0";
-  int1 = 0;
-  int2 = 0;
-  operator = "";
   runningDisplay.textContent = "";
 };
 
@@ -131,5 +135,19 @@ const multiply = function (a, b) {
   return a * b;
 };
 const divide = function (a, b) {
+  if (b === 0) {
+    return "Error"; // Handle division by 0
+  }
   return a / b;
 };
+
+// Export the functions for testing
+// module.exports = {
+//   add,
+//   subtract,
+//   multiply,
+//   divide,
+//   operate,
+//   clearValues,
+//   clearDisplay,
+// };
